@@ -2296,6 +2296,7 @@
 #include "code\game\objects\structures\toilet.dm"
 #include "code\game\objects\structures\train.dm"
 #include "code\game\objects\structures\traps.dm"
+#include "code\game\objects\structures\archery_target.dm"
 #include "code\game\objects\structures\traveltile.dm"
 #include "code\game\objects\structures\trench.dm"
 #include "code\game\objects\structures\walldeco.dm"

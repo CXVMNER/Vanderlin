@@ -24,6 +24,10 @@
 	create_reagents(50, NO_REACT)
 
 /obj/projectile/bullet/reusable/arrow/on_hit(atom/target, blocked = FALSE)
+	if(istype(target, /obj/structure/archery_target) && !istype(src, /obj/projectile/bullet/reusable/arrow/pyro) && !istype(src, /obj/projectile/bullet/reusable/arrow/vial) && !istype(src, /obj/projectile/bullet/reusable/arrow/water))
+		var/obj/structure/archery_target/T = target
+		T.receive_arrow(src, firer)
+		return BULLET_ACT_HIT
 	if(can_inject && iscarbon(target))
 		var/mob/living/carbon/M = target
 		var/list/split = list()
