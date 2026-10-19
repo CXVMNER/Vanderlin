@@ -21,7 +21,7 @@
 /proc/archery_cdf(r, sigma)
 	if(r <= 0)
 		return 0
-	return 1 - exp(-(r * r) / (2 * sigma * sigma))
+	return 1 - 2.718281828 ** (-(r * r) / (2 * sigma * sigma))
 
 /proc/archery_score_for_distance(d)
 	if(d > ARCHERY_RADIUS)
