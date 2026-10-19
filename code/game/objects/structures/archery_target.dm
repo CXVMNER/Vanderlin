@@ -80,6 +80,13 @@
 	stuck.Cut()
 	return ..()
 
+/obj/structure/archery_target/bullet_act(obj/projectile/P, def_zone, piercing_hit = FALSE)
+	if(istype(P, /obj/projectile/bullet/reusable/arrow) && !istype(P, /obj/projectile/bullet/reusable/arrow/pyro) && !istype(P, /obj/projectile/bullet/reusable/arrow/vial) && !istype(P, /obj/projectile/bullet/reusable/arrow/water))
+		playsound(src, P.hitsound, 30, TRUE)
+		receive_arrow(P, P.firer)
+		return BULLET_ACT_HIT
+	return ..()
+
 // Alt + LMB: toggle mode
 /obj/structure/archery_target/AltClick(mob/user, list/modifiers)
 	mode = (mode == ARCHERY_MODE_TRAINING) ? ARCHERY_MODE_COMPETITION : ARCHERY_MODE_TRAINING
